@@ -2,16 +2,17 @@ package com.example.ankita.calciapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    public String str = "";
-    Character op = 'q';
-    int i, num, numtTemp;
+    String str="";
+    char op='q';
+    int  num, numtTemp;
     EditText showResult;
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bAdd, bSub, bMul, bDiv, bPtr, bEql;
-
+boolean add,sub,mul,div;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,133 @@ public class MainActivity extends AppCompatActivity {
         bDiv = (Button) findViewById(R.id.btnDiv);
         bPtr = (Button) findViewById(R.id.btnPtr);
         bEql= (Button) findViewById(R.id.btnEql);
-b1.setOnClickListener(new.View.OnClickListener);
-        
-    }
-}
+        showResult= (EditText) findViewById(R.id.edt1);
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // b1.setText(showResult.getText()+"1");
+                showResult.setText("1");
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //b2.setText(showResult.getText() + "2");
+                showResult.setText("2");
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  b3.setText(showResult.getText() + "3");
+                showResult.setText("3");
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText("4");
+            }
+        });
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText("5");
+            }
+        });
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               showResult.setText("6");
+            }
+        });
+
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+           //     b7.setText(showResult.getText() + "7");
+                showResult.setText("7");
+
+            }
+        });
+
+        b8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText("8");
+            }
+        });
+
+        b9.setOnClickListener(
+                new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText("9");
+            }
+        });
+        b0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText("0");
+            }
+        });
+
+        bAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText( "+");
+            }
+        });
+        bSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText( "-");
+            }
+        });
+        bMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText( "*");
+            }
+        });
+        bDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText( "/");
+            }
+        });
+        bPtr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResult.setText( ".");
+            }
+        });
+        bEql.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            num=Integer.parseInt(showResult.getText().toString());}
+
+            private void insert(int j){
+            str=str+Integer.toString(j);
+            num=Integer.valueOf(str);
+            showResult.setText(str);
+            }
+            private void perform(){
+            str=" ";
+                numtTemp=num;
+            }
+            private void calculate(){
+                if(op=='+')
+                    num=numtTemp+num;
+                else if(op=='-')
+                    num=numtTemp-num;
+                else if(op=='*')
+                    num=numtTemp*num;
+                else if(op=='/')
+                    num=numtTemp/num;
+                showResult.setText(""+num);
+
+
+        }});}}
