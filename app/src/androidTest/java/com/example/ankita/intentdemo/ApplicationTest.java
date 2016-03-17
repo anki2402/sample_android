@@ -1,4 +1,4 @@
-package com.example.ankita.calciapp;
+package com.example.ankita.intentdemo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

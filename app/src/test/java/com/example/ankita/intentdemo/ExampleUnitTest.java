@@ -1,4 +1,4 @@
-package com.example.ankita.calciapp;
+package com.example.ankita.intentdemo;
 
 import org.junit.Test;
 
